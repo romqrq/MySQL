@@ -1,0 +1,39 @@
+MySQL Commands
+
+/* Use the Chinook database */
+use Chinook;
+
+/*
+Select the name column for each of the records in
+the `Artist` table
+*/
+select Name from Artist;
+
+/*
+Select the `FirstName` and `LastName` for each of the
+records in the `Customer` table
+*/
+select FirstName, LastName from Customer;
+
+/*
+Select all of the columns for every record in the `Track`
+table
+*/
+select * from Track;
+
+---------------------
+show databases;
+
+SELECT something FROM aTable;
+
+WHERE - A filter/condition
+can be used in SELECT, UPDATE and DELETE statements.
+>SELECT * from Track
+ WHERE Composer = 'U2';
+
+ JOIN - Returns ALL ROWS from tables where the KEY RECORD of one table is equal to the KEY RECORD of another table.
+ INNER JOIN - Selects ALL ROWS from BOTH participating tables as long as there is a MATCH between the columns.
+
+> SELECT * from Track
+ INNER JOIN Album on Track.AlbumId = Album.AlbumId;
+ ==> The JOIN pulls in the rows from the track table then FOR EACH ROW it adds the data from the Album table.
